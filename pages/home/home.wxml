@@ -1,5 +1,16 @@
 <!--pages/home/home.wxml-->
-<text>项目初始化</text>
-<text class="tit">hello world</text>
 
+<!-- 1.数据绑定：{{}} -->
+<view>Hello World {{name}}</view>
+<view>我的年龄：{{age}}</view>
+<view>我的年龄：{{age + 18}}</view>
 
+<!-- 2.列表渲染：wx:for -->
+<view wx:for="{{games}}">
+  {{item.name}}--{{item.id}}
+</view>
+
+<!-- 3.事件监听 -->
+<view>当前数：{{count}}</view>
+<button size="mini" bindtap='addCount'>+</button>
+<button size="mini" bindtap='reduceCount'>-</button>
