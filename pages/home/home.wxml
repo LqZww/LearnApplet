@@ -1,5 +1,4 @@
 <!--pages/home/home.wxml-->
-<text>项目初始化</text>
-<text class="tit">hello world</text>
+<text>首页</text>
 
 
