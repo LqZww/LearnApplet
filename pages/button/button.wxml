@@ -1,0 +1,13 @@
+<!--pages/button/button.wxml-->
+<!-- button组件 -->
+<!-- 1.基本使用 -->
+<button>基本使用</button>
+
+<!-- 2.size：设置按钮大小 -->
+<button size="mini">mini</button>
+<button size="mini">mini</button>
+
+<!-- 3.type：设置按钮样式 -->
+<button size="mini" type="default">default</button>
+<button size="mini" type="primary">primary</button>
+<button size="mini" type="warn">warn</button>

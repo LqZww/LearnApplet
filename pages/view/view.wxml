@@ -1,0 +1,10 @@
+<!--pages/view/view.wxml-->
+<!-- view组件：块级元素，独占一行,相当于div标签 -->
+<!-- 1.基本使用 -->
+<view>hello</view>
+<view>world</view>
+
+<!-- 2.hover-class -->
+<view class="box" hover-class="hover-view" hover-start-time="0">
+	呵呵
+</view>

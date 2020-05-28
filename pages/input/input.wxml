@@ -1,0 +1,23 @@
+<!--pages/input/input.wxml-->
+<!-- input组件 -->
+<!-- 1.基本使用 -->
+<input></input>
+<input />
+
+<!-- 2.value：input中的默认值 -->
+<input value="呵呵"></input>
+
+<!-- 3.type：决定键盘的类型 -->
+<input type="text"></input>
+<input type="number"></input>
+<input type="idcard"></input>
+<input type="digit"></input>
+
+<!-- 4.password：暗文 -->
+<input password></input>
+
+<!-- 5.confirm-type	 -->
+<input type="text" confirm-type="search"></input>
+
+<!-- 6.input绑定事件 -->
+<input bindinput="handleInput" bindfocus="handleFocus" bindblur="handleBlur"></input>

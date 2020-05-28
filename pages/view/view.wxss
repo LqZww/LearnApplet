@@ -1,0 +1,9 @@
+/* pages/view/view.wxss */
+.box{
+  width: 100px;
+  height: 100px;
+  background-color: aqua;
+}
+.hover-view{
+  background-color: red;
+}
