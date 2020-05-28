@@ -1,4 +1,12 @@
 <!--pages/home/home.wxml-->
 <text>首页</text>
 
+<!-- 获取用户信息方式二 -->
+<button size="mini" open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo">获取授权，获取用户信息</button>
 
+<!-- 获取用户信息方式三 -->
+<open-data type="userNickName"></open-data>
+<open-data type="userGender"></open-data>
+<open-data type="userProvince"></open-data>
+
+<view wx:for="{{list}}">{{item.name}}</view>
