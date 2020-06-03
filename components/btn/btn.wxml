@@ -1,0 +1,2 @@
+<!--components/btn/btn.wxml-->
+<button size="mini">btn</button>

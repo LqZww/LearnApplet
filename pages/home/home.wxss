@@ -1,4 +1,12 @@
 /* pages/home/home.wxss */
-.tit{
+.title {
   color: red;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
 }

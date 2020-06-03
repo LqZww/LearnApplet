@@ -1,5 +1,47 @@
 <!--pages/home/home.wxml-->
-<text>项目初始化</text>
-<text class="tit">hello world</text>
+<!-- <view class="title">hello</view> -->
+<!-- 自定义组件的使用 -->
+<!-- 自定义组件标签名只能是小写字母、中划线和下划线的组合 -->
+<!-- <my-cpn />
+<my-cpn></my-cpn> -->
 
+<!-- 自定义组件样式 -->
+<!-- <my-style /> -->
 
+<!-- 给自定义组件传输数据、样式 -->
+<my-prop />
+<my-prop title="标题1" content="内容1" titleclass="red" />
+<my-prop title="标题2" content="内容2" titleclass="green" />
+
+<view>-----------------------------</view>
+<!-- 组件内部发出事件 -->
+<view>当前数：{{counter}}</view>
+<my-event bind:increment="handleIncrement" />
+
+<!-- 练习 -->
+<w-tab-control titles="{{['天龙','星宿','唐门']}}" bind:itemclick="tabControlClick" />
+<view>当前点击了：{{index}}-{{title}}</view>
+
+<view>---------------------</view>
+<!-- 直接选中组件修改数据或调用方法 -->
+<my-sel class="sel-class" />
+<button size="mini" bind:tap="handleIncrementCpn">修改组件内数据</button>
+
+<view>----------------------</view>
+<!-- slot的使用 -->
+<!-- 单个插槽 -->
+<my-slot>
+	<text>主要内容</text>
+</my-slot>
+
+<view>+++++++++++</view>
+<!-- 多个插槽 -->
+<!-- 
+  注意：
+    1.给每一个插槽起名字：name属性
+    2.必须在Component对象中添加一个选项：options => multipleSlots
+ -->
+<my-mslot>
+	<button size="mini" slot="slot2">按钮</button>
+	<slider slot="slot1"></slider>
+</my-mslot>
