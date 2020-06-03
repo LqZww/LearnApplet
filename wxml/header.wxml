@@ -1,0 +1,4 @@
+<view>
+	<include src="./main.wxml" />
+	<view>header</view>
+</view>

@@ -1,0 +1,20 @@
+<!--pages/wxss/wxss.wxml-->
+<!-- 一、设置样式的三种方式 -->
+<!-- 1.行内（内联）样式 -->
+<view style="border:1px solid red;color:green;">hello world</view>
+
+<!-- 2.页内样式 -->
+<view class="box">hello zww</view>
+
+<!-- 3.全局样式 -->
+<view class="container">hello lq</view>
+
+<!-- 二、三种样式作用于同一个组件 -->
+<!-- 优先级：行内样式 > 页面样式 > 全局样式 -->
+<view style="background:red;" class="content">吱吱吱吱</view>
+
+<!-- 三、rpx -->
+<view class="box1">box1</view>
+<view class="box2">box2</view>
+
+<button class="btn">按钮</button>

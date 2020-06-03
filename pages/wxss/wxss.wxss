@@ -1,0 +1,11 @@
+/* pages/wxss/wxss.wxss */
+/* 样式导入 */
+@import './style/box.wxss';
+
+.box {
+  font-size: 28px;
+}
+
+.content {
+  background-color: aqua;
+}

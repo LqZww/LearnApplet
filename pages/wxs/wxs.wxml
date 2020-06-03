@@ -1,0 +1,30 @@
+<!--pages/wxs/wxs.wxml-->
+<!-- wxs -->
+<!-- 1.使用方式 -->
+<!-- 1.1 -->
+<!-- <wxs module="info">
+	var message = "hello"
+
+	function sum(num1, num2) {
+		return num1 + num2
+	}
+	module.exports = {
+		message: message,
+		sum: sum
+	}
+</wxs> -->
+<!-- 1.2 -->
+<!-- 不能使用绝对路径，只能使用相对路径 -->
+<wxs src="../../wxs/info.wxs" module="info" />
+
+<view>{{info.message}}</view>
+<view>{{info.sum(20,20)}}</view>
+
+<!-- 2.应用 -->
+<wxs src="../../wxs/format.wxs" module="format"/>
+<view>{{price}}</view>
+<view>{{format.priceFormat(price,3)}}</view>
+<view>----------</view>
+<view>{{time}}</view>
+<view>{{format.dateFormat(time)}}</view>
+<view>{{format.dateFormat(time,'yyyy/MM/dd hh:mm:ss')}}</view>

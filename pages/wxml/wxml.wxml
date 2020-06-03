@@ -1,0 +1,90 @@
+<!--pages/wxml/wxml.wxml-->
+<!-- wxml -->
+<!-- 1.格式 -->
+<view>view</view>
+<!-- <image /> -->
+
+<!-- 2.Mustache语法 -->
+<view>{{message}}</view>
+<view>{{firstname + ' ' + lastname}}</view>
+<view>{{age >= 18 ? '成年人' : '未成年人'}}</view>
+<view>{{nowTime}}</view>
+
+<view class="box {{isActive ? 'active' : ''}}">box</view>
+<button size="mini" bindtap="handleSwitchColor">切换颜色</button>
+
+<view>-------------------------</view>
+<!-- wx:if -->
+<view wx:if="{{isShow}}">条件判断</view>
+<button bindtap="handleSwitchShow">隐藏/显示</button>
+
+<view>-------------------------</view>
+<view wx:if="{{score >= 90}}">优秀</view>
+<view wx:elif="{{score >= 80 && score < 90}}">良好</view>
+<view wx:elif="{{score >= 60 && score < 80}}">及格</view>
+<view wx:else>不及格</view>
+<view>当前分数{{score}}</view>
+<button bindtap="handleIncrement">增加分数</button>
+
+<view>-------------------------</view>
+<!-- hidden -->
+<view hidden="{{false}}">hidden</view>
+
+<!-- wx:if与hidden隐藏时的区别 -->
+<!-- 
+  区别：
+  hidden:将组件隐藏时，该组件依然存在，display:none;
+  wx:if:将组件隐藏时，该组件根本不存在。
+
+  选择：
+  如果显示和隐藏切换频率很高时，选择使用hidden
+  如果显示和隐藏切换频率很低时，选择使用wx:if
+ -->
+<view wx:if="{{false}}">通过wx:if控制</view>
+<view hidden="{{true}}">通过hidden控制</view>
+
+<view>-------------------------------------------</view>
+<view>列表渲染，wx:for</view>
+<!-- 遍历数组 -->
+<!-- <view wx:for="{{['a','b','c','d']}}">{{item}}-{{index}}</view> -->
+<!-- 遍历字符串 -->
+<!-- <view wx:for="lqzww">{{item}}-{{index}}</view> -->
+<!-- 遍历数字 -->
+<!-- <view wx:for="{{3}}">{{item}}</view> -->
+
+<!-- block标签：并不是一个组件，仅仅是一个包装元素，不会在页面中做任何渲染，只接受控制属性 -->
+<!-- 
+  好处：
+    1.将需要进行遍历或者判断的内容进行包裹。
+    2.将遍历和判断的属性放在block便签中，不影响普通属性的阅读，提高代码的可读性。
+ -->
+<block wx:for="{{2}}" wx:key="item">
+	<view>呵呵</view>
+</block>
+
+<!-- item、index起名 -->
+<view wx:for="{{games}}" wx:key="game" wx:for-item="game" wx:for-index="num">{{game}}-{{num}}</view>
+
+<!-- key的作用：主要是为了高效的更新虚拟DOM -->
+<view wx:for="{{letters}}" wx:key="item">{{item}}</view>
+
+<view>-------------------------------------------</view>
+<view>template</view>
+<!-- 1.定义模板，模板包裹的内容在没有被使用前是不会进行渲染了 -->
+<!-- <template name="contentItem">
+	<button size="mini">{{btnText}}</button>
+	<view>{{content}}</view>
+</template> -->
+<import src="/wxml/template.wxml" />
+<!-- 2.使用模板 -->
+<template is="contentItem" data="{{btnText:'btn1',content:'view1'}}" />
+<template is="contentItem" data="{{btnText:'btn2',content:'view2'}}" />
+<template is="contentItem" data="{{btnText:'btn3',content:'view3'}}" />
+
+<!--
+  wxml的导入有两种方式：
+    1.import导入：主要是导入template，不能进行递归导入
+    2.include引入：不能导入template/wxs，可以进行递归导入
+ -->
+<include src="/wxml/header.wxml" />
+<include src="/wxml/footer.wxml" />
