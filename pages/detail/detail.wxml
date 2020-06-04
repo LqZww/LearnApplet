@@ -1,0 +1,8 @@
+<!--pages/detail/detail.wxml-->
+<text>pages/detail/detail.wxml</text>
+
+<navigator url="/pages/comment/comment">跳转comment</navigator>
+
+<navigator open-type="navigateBack">返回</navigator>
+
+<button bind:tap="handleBackHome">返回按钮</button>

@@ -1,5 +1,22 @@
 <!--pages/home/home.wxml-->
-<text>项目初始化</text>
-<text class="tit">hello world</text>
+<!-- 页面跳转 -->
 
+<!-- 1.navigator -->
+<navigator url="/pages/detail/detail">跳转deatil</navigator>
 
+<view>----------------</view>
+<!-- 2.open-type属性 -->
+<navigator url="/pages/detail/detail" open-type="redirect">open-type：redirect</navigator>
+
+<navigator url="/pages/about/about" open-type="switchTab">open-type：switchTab</navigator>
+
+<navigator url="/pages/detail/detail" open-type="reLaunch">open-type：reLaunch</navigator>
+
+<view>----------------</view>
+<!-- 3.跳转过程中数据的传递 -->
+<navigator url="/pages/detail/detail?name=zww&age=22">跳转deatil</navigator>
+<view>{{title}}</view>
+
+<view>----------------</view>
+<!-- 4.其他跳转方法 -->
+<button bind:tap="handlePushDetail">跳转</button>
