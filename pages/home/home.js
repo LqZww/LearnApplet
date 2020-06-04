@@ -1,66 +1,56 @@
 // pages/home/home.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
-  data: {
-
+  handleShowToast() {
+    wx.showToast({
+      title: '弹出了',
+      duration: 3000,
+      icon: 'loading',
+      mask: true,
+      success: function () {
+        console.log("成功");
+      },
+      fail: function () {
+        console.log("失败");
+      }
+    })
   },
+  handleShowModal() {
+    wx.showModal({
+      title: "Modal",
+      content: "Modal弹窗",
+      success: function (res) {
+        console.log(res);
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+      }
+    })
   },
+  handleShowLoading() {
+    wx.showLoading({
+      title: 'Loading',
+      mask: true
+    })
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+    setTimeout(() => {
+      wx.hideLoading()
+    }, 1000)
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  handleShowActionSheet() {
+    wx.showActionSheet({
+      itemList: ['天龙八部', '英雄联盟'],
+      itemColor: 'red',
+      success: res => {
+        console.log(res);
+      }
+    })
   },
+  onShareAppMessage: function (options) {
+    console.log(options);
+    return {
+      title: "hhhhh",
+      path: '/pages/home/home'
+    }
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
 
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
 
   }
 })

@@ -1,5 +1,16 @@
 <!--pages/home/home.wxml-->
-<text>项目初始化</text>
-<text class="tit">hello world</text>
+<!-- 弹窗 -->
+<!-- 1.Toast -->
+<button size="mini" bind:tap="handleShowToast">Toast弹窗</button>
 
+<!-- 2.Modal -->
+<button size="mini" bind:tap="handleShowModal">Modal弹窗</button>
 
+<!-- 3.Loading -->
+<button size="mini" bind:tap="handleShowLoading">Loading弹窗</button>
+
+<!-- 4.actionSheet -->
+<button size="mini" bind:tap="handleShowActionSheet">actionSheet弹窗</button>
+
+<!-- 5.分享 -->
+<button size="mini" open-type="share">分享</button>
